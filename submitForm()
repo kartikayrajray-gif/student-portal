@@ -1,0 +1,26 @@
+function submitForm() {
+
+fetch("http://localhost:8080/save", {
+
+method: "POST",
+
+headers: {
+"Content-Type":"application/json"
+},
+
+body: JSON.stringify({
+rollNo: document.getElementById("roll").value,
+name: document.getElementById("name").value
+})
+
+})
+.then(res => res.text())
+.then(data => alert(data));
+
+}
+CREATE DATABASE studentdb;
+
+CREATE TABLE students(
+roll_no VARCHAR(20),
+name VARCHAR(100)
+);
