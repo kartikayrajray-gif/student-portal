@@ -1,0 +1,35 @@
+public class Student {
+    private String rollNo;
+    private String name;
+
+    public String getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(String rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin("*")
+public class StudentController {
+
+    @PostMapping("/save")
+    public String saveStudent(@RequestBody Student student) {
+
+        System.out.println(student.getRollNo());
+        System.out.println(student.getName());
+
+        return "Data Saved Successfully";
+    }
+}
